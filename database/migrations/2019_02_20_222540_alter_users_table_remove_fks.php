@@ -16,6 +16,7 @@ class AlterUsersTableRemoveFks extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('users_users_roles_id_foreign');
             $table->integer('users_roles_id')->nullable(true)->change();
+            $table->integer('users_roles_id')->unsigned()->change();
             $table->integer('users_groups_id')->nullable(true)->change();
         });
     }
@@ -29,6 +30,7 @@ class AlterUsersTableRemoveFks extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('users_roles_id')->nullable(false)->change();
+            $table->integer('users_roles_id')->unsigned()->change();
             $table->foreign('users_roles_id')
                 ->references('id')->on('users_roles')
                 ->onDelete('cascade')
