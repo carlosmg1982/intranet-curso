@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','Usuarios')
 @section('content')
-    @if(!empty($projects))
+    @if(!empty($users))
         <table>
             <thead>
             <tr>
@@ -11,11 +11,11 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($project as $project)
+            @foreach($users as $user)
                 <tr>
-                    <td>{{$project->name}}</td>
-                    <td>{{$project->email}}</td>
-                    <td>{{$project->dni}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->dni}}</td>
                 </tr>
             @endforeach
             </tbody>
