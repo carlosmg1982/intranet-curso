@@ -1,0 +1,9 @@
+@extends('layout')
+@section('title',"Usuario")
+@section('content')
+    <div>
+        <div>Nombre:</div><div>{{$user->name}}</div>
+        <div>E-mail:</div><div>{{$user->email}}</div>
+        <div>DNI:</div><div>{{$user->dni}}</div>
+    </div>
+    @endsection
